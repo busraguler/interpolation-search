@@ -1,0 +1,36 @@
+
+<script  type="text/javascript">
+
+    function interpolationSearch(array, length, key){
+
+        var front = 0, end = length-1, mid;
+
+        while(front <= end){
+
+            if(front === end){
+                if(array[front] === key){
+                    return front
+                } else{
+                    return -1
+                }
+            }
+
+            mid = front + Math.floor((key-array[front])*(end-front)/(array[end]-array[front]));
+
+            if(key === array[mid]){
+                return mid;
+            } else if(key < array[mid]){
+                end = mid-1;
+            } else{
+                front = mid+1;
+            }
+        }
+        return -1;
+    }
+
+    const array = [1, 3, 6, 10, 15];
+    console.log(interpolationSearch(array, array.length, 1));//return 0
+    console.log(interpolationSearch(array, array.length, 6)); //return 2
+    console.log(interpolationSearch(array, array.length, 11)); //return -1
+</script>
+
