@@ -1,0 +1,2 @@
+# interpolation-search
+interpolation search
